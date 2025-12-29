@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact JETFIX AUTOCARE - Schedule your automotive service appointment in Ilorin, Kwara State. Phone, email, or visit us today for expert car repair and maintenance.">
+    <meta name="keywords" content="contact auto repair, schedule service, car repair appointment, JETFIX contact">
+    <title>Contact Us - JETFIX AUTOCARE</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#0066cc',
+                            foreground: '#ffffff',
+                        },
+                        secondary: {
+                            DEFAULT: '#dc2626',
+                            foreground: '#ffffff',
+                        },
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(11, 74, 138, 0.85), rgba(0, 26, 51, 0.90)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .excellence-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 900;
+            font-size: 1.2em;
+            background: linear-gradient(135deg, #dc2626 0%, #f59e0b 50%, #dc2626 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            letter-spacing: 0.05em;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            animation: float-whatsapp 3s ease-in-out infinite;
+        }
+
+        .whatsapp-button {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
+                0 0 0 0 rgba(37, 211, 102, 0.7);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-button i {
+            color: white;
+            font-size: 30px;
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            background: white;
+            color: #333;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            right: 75px;
+        }
+
+        @keyframes float-whatsapp {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse-whatsapp {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
+                    0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            50% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
+                    0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
+                    0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-button {
+                width: 55px;
+                height: 55px;
+            }
+
+            .whatsapp-button i {
+                font-size: 26px;
+            }
+
+            .whatsapp-tooltip {
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="font-body bg-white text-gray-900">
+    <!-- Top Contact Bar -->
+    <div class="hidden md:block text-primary-foreground py-2" style="background-color: #0b4a8a;">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm">
+            <div class="flex items-center gap-4">
+                <a href="tel:+2348148595815" class="flex items-center gap-2 hover:underline">
+                    <i class="fas fa-phone"></i>
+                    <span>+234 8148595815</span>
+                </a>
+                <a href="mailto:jetfixautocare@gmail.com" class="flex items-center gap-2 hover:underline">
+                    <i class="fas fa-envelope"></i>
+                    <span>jetfixautocare@gmail.com</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-2">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Ilorin, Kwara State, Nigeria</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <!-- Logo -->
+                <div class="flex items-center gap-5">
+                    <div class="bg-white rounded-full p-2 shadow-lg">
+                        <img src="logo.jpg" alt="JETFIX AUTOCARE Logo" class="h-16 w-16 object-contain rounded-full">
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="text-3xl font-black text-gray-900 tracking-tight leading-none"
+                            style="font-family: 'Raleway', sans-serif;">
+                            JETFIX <span class="text-secondary">AUTOCARE</span>
+                        </div>
+                        <div class="text-sm text-gray-600 font-semibold tracking-wide mt-1"
+                            style="font-family: 'Raleway', sans-serif; letter-spacing: 0.05em;">
+                            A Passion for Excellence
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden lg:flex items-center gap-8">
+                    <li><a href="index.html" class="text-gray-900 hover:text-secondary transition font-medium">Home</a>
+                    </li>
+                    <li><a href="services.html"
+                            class="text-gray-900 hover:text-secondary transition font-medium">Services</a></li>
+                    <li><a href="team.html" class="text-gray-900 hover:text-secondary transition font-medium">Our
+                            Team</a>
+                    </li>
+                    <li><a href="gallery.html"
+                            class="text-gray-900 hover:text-secondary transition font-medium">Gallery</a></li>
+                    <li><a href="contact.html"
+                            class="text-secondary font-bold border-b-2 border-secondary pb-1">Contact</a></li>
+                    <li>
+                        <a href="tel:+2348148595815"
+                            class="bg-secondary hover:bg-red-700 text-secondary-foreground px-6 py-2 rounded font-semibold transition inline-flex items-center gap-2">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="lg:hidden text-gray-900">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero-gradient text-primary-foreground py-16 lg:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+                Get in <span class="excellence-text">Touch</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto">
+                We're here to help with all your automotive needs
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h2 class="text-3xl font-bold mb-4 font-heading text-gray-900">Send Us a Message</h2>
+                    <p class="text-gray-600 mb-8">Fill out the form below and we'll get back to you as soon as possible
+                    </p>
+
+                    <form class="space-y-6" id="contactForm">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold mb-2 text-gray-700">Full Name
+                                    *</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-semibold mb-2 text-gray-700">Email Address
+                                    *</label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold mb-2 text-gray-700">Phone
+                                    Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+234 812 345 6789"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                            </div>
+
+                            <div>
+                                <label for="service" class="block text-sm font-semibold mb-2 text-gray-700">Service
+                                    Needed</label>
+                                <select id="service" name="service"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                                    <option value="">Select a service</option>
+                                    <option value="diagnostics">Computer Diagnostics</option>
+                                    <option value="engine">Engine Repair</option>
+                                    <option value="brakes">Brake Service</option>
+                                    <option value="oil">Oil Change</option>
+                                    <option value="transmission">Transmission Service</option>
+                                    <option value="ac">A/C & Heating</option>
+                                    <option value="electrical">Electrical Systems</option>
+                                    <option value="alignment">Wheel Alignment</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-semibold mb-2 text-gray-700">Message
+                                *</label>
+                            <textarea id="message" name="message" rows="6" required
+                                placeholder="Tell us about your vehicle and service needs..."
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-primary hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg transition transform hover:scale-105">
+                            Send Message
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold mb-8 font-heading text-gray-900">Contact Information</h2>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900">Visit Us</h3>
+                                <p class="text-gray-600">Ilorin, Kwara State<br>Nigeria</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900">Call Us</h3>
+                                <p><a href="tel:+2348148595815"
+                                        class="text-primary hover:text-blue-700 font-semibold">+234 814 859 5815</a></p>
+                                <p class="text-gray-500 text-sm mt-1">Mon-Sat: 8AM - 6PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900">Email Us</h3>
+                                <p><a href="mailto:jetfixautocare@gmail.com"
+                                        class="text-primary hover:text-blue-700 font-semibold">jetfixautocare@gmail.com</a>
+                                </p>
+                                <p class="text-gray-500 text-sm mt-1">We respond within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900">Business Hours</h3>
+                                <p class="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM<br>
+                                    Saturday: 9:00 AM - 4:00 PM<br>
+                                    Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact -->
+    <section class="bg-gradient-to-r from-primary to-blue-800 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-black mb-4 font-heading">Need Assistance?</h2>
+            <p class="text-xl mb-8">Contact us today for expert automotive care</p>
+            <a href="tel:+2348148595815"
+                class="bg-secondary hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold text-lg inline-flex items-center gap-2 transition transform hover:scale-105">
+                <i class="fas fa-phone"></i>
+                Call Us Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-4 font-heading">JETFIX AUTOCARE</h4>
+                    <p class="text-gray-400 leading-relaxed">Your trusted automotive service partner. Quality repairs,
+                        expert technicians, customer satisfaction guaranteed.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-4 font-heading">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="hover:text-white transition flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs"></i>Home</a></li>
+                        <li><a href="services.html" class="hover:text-white transition flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs"></i>Services</a></li>
+                        <li><a href="team.html" class="hover:text-white transition flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs"></i>Our Team</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs"></i>Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-4 font-heading">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="hover:text-white transition flex items-center gap-2"><i
+                                    class="fas fa-check text-xs"></i>Engine Repair</a></li>
+                        <li><a href="services.html" class="hover:text-white transition flex items-center gap-2"><i
+                                    class="fas fa-check text-xs"></i>Brake Service</a></li>
+                        <li><a href="services.html" class="hover:text-white transition flex items-center gap-2"><i
+                                    class="fas fa-check text-xs"></i>Oil Changes</a></li>
+                        <li><a href="services.html" class="hover:text-white transition flex items-center gap-2"><i
+                                    class="fas fa-check text-xs"></i>Diagnostics</a></li>
+                        <li><a href="services.html" class="hover:text-white transition flex items-center gap-2"><i
+                                    class="fas fa-check text-xs"></i>Tire Services</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-4 font-heading">Contact Info</h4>
+                    <div class="space-y-3">
+                        <p class="flex items-start gap-3"><i
+                                class="fas fa-map-marker-alt text-secondary mt-1"></i><span>Ilorin, Kwara
+                                State,<br>Nigeria</span></p>
+                        <p class="flex items-center gap-3"><i class="fas fa-phone text-secondary"></i><a
+                                href="tel:+2348148595815" class="hover:text-white transition">+234 814 859 5815</a></p>
+                        <p class="flex items-center gap-3"><i class="fas fa-envelope text-secondary"></i><a
+                                href="mailto:jetfixautocare@gmail.com"
+                                class="hover:text-white transition">jetfixautocare@gmail.com</a></p>
+                        <p class="flex items-center gap-3"><i class="fas fa-clock text-secondary"></i><span>Mon-Sat: 8AM
+                                - 6PM</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p>&copy; 2025 JETFIX AUTOCARE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/2348148595815?text=Hello%20JETFIX%20AUTOCARE!%20I%20would%20like%20to%20inquire%20about%20your%20services."
+            class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+            <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

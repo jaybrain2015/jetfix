@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Meet the JETFIX AUTOCARE team - Expert automotive professionals dedicated to providing top quality auto care services in Ilorin, Nigeria.">
+    <title>Our Team - JETFIX AUTOCARE</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#0066cc',
+                            foreground: '#ffffff',
+                        },
+                        secondary: {
+                            DEFAULT: '#dc2626',
+                            foreground: '#ffffff',
+                        },
+                        muted: {
+                            DEFAULT: '#f5f5f5',
+                            foreground: '#6b7280',
+                        },
+                        card: {
+                            DEFAULT: '#ffffff',
+                            foreground: '#1a1a1a',
+                        },
+                        border: '#e5e7eb',
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(11, 74, 138, 0.85), rgba(0, 26, 51, 0.90)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Enhanced Card Styles */
+        .team-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.05), rgba(220, 38, 38, 0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .team-card:hover::before {
+            opacity: 1;
+        }
+
+        .team-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 102, 204, 0.3), 0 0 40px rgba(220, 38, 38, 0.15);
+        }
+
+        /* Team Image Styles */
+        .team-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Image inner div for zoom effect */
+        .team-image-wrapper>div {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s ease;
+            background-size: 90%;
+            background-position: center top;
+            background-repeat: no-repeat;
+        }
+
+        .team-card:hover .team-image-wrapper>div {
+            transform: scale(1.15);
+        }
+
+        .team-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .team-card:hover .team-image-wrapper::after {
+            opacity: 1;
+        }
+
+        /* Scroll Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-300 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-400 {
+            transition-delay: 0.4s;
+        }
+
+        /* Excellence Artistic Styling */
+        .excellence-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 900;
+            font-size: 1.2em;
+            background: linear-gradient(135deg, #dc2626 0%, #f59e0b 50%, #dc2626 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            letter-spacing: 0.05em;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            animation: float-whatsapp 3s ease-in-out infinite;
+        }
+
+        .whatsapp-button {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
+                0 0 0 0 rgba(37, 211, 102, 0.7);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6),
+                0 0 0 15px rgba(37, 211, 102, 0.1);
+        }
+
+        .whatsapp-button i {
+            color: white;
+            font-size: 30px;
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            color: #128c7e;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-tooltip::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid white;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            right: 75px;
+        }
+
+        @keyframes float-whatsapp {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse-whatsapp {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
+                    0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            50% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
+                    0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
+                    0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-button {
+                width: 55px;
+                height: 55px;
+            }
+
+            .whatsapp-button i {
+                font-size: 26px;
+            }
+
+            .whatsapp-tooltip {
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="font-body bg-white text-gray-900">
+    <!-- Top Contact Bar -->
+    <div class="hidden md:block text-primary-foreground py-2" style="background-color: #0b4a8a;">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm">
+            <div class="flex items-center gap-4">
+                <a href="tel:+2348148595815" class="flex items-center gap-2 hover:underline">
+                    <i class="fas fa-phone"></i>
+                    <span>+234 8148595815</span>
+                </a>
+                <a href="mailto:jetfixautocare@gmail.com" class="flex items-center gap-2 hover:underline">
+                    <i class="fas fa-envelope"></i>
+                    <span>jetfixautocare@gmail.com</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-2">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Ilorin, Kwara State, Nigeria</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <!-- Logo -->
+                <div class="flex items-center gap-5">
+                    <div class="bg-white rounded-full p-2 shadow-lg">
+                        <img src="logo.jpg" alt="JETFIX AUTOCARE Logo" class="h-16 w-16 object-contain rounded-full">
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="text-3xl font-black text-gray-900 tracking-tight leading-none"
+                            style="font-family: 'Raleway', sans-serif;">
+                            JETFIX <span class="text-secondary">AUTOCARE</span>
+                        </div>
+                        <div class="text-sm text-gray-600 font-semibold tracking-wide mt-1"
+                            style="font-family: 'Raleway', sans-serif; letter-spacing: 0.05em;">
+                            A Passion for Excellence
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden lg:flex items-center gap-8">
+                    <li><a href="index.html" class="text-gray-900 hover:text-secondary transition font-medium">Home</a>
+                    </li>
+                    <li><a href="services.html"
+                            class="text-gray-900 hover:text-secondary transition font-medium">Services</a>
+                    </li>
+                    <li><a href="team.html" class="text-secondary font-medium">Our
+                            Team</a>
+                    </li>
+                    <li><a href="gallery.html"
+                            class="text-gray-900 hover:text-secondary transition font-medium">Gallery</a></li>
+                    <li><a href="contact.html"
+                            class="text-gray-900 hover:text-secondary transition font-medium">Contact</a></li>
+                    <li>
+                        <a href="tel:+2348148595815"
+                            class="bg-secondary hover:bg-red-700 text-secondary-foreground px-6 py-2 rounded font-semibold transition inline-flex items-center gap-2">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden text-gray-900">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden pb-4">
+                <ul class="flex flex-col gap-3">
+                    <li><a href="index.html"
+                            class="block text-gray-900 hover:text-secondary transition font-medium">Home</a>
+                    </li>
+                    <li><a href="services.html"
+                            class="block text-gray-900 hover:text-secondary transition font-medium">Services</a>
+                    </li>
+                    <li><a href="team.html" class="block text-secondary font-medium">Our
+                            Team</a></li>
+                    <li><a href="gallery.html"
+                            class="block text-gray-900 hover:text-secondary transition font-medium">Gallery</a>
+                    </li>
+                    <li><a href="contact.html"
+                            class="block text-gray-900 hover:text-secondary transition font-medium">Contact</a>
+                    </li>
+                    <li>
+                        <a href="tel:+2348148595815"
+                            class="bg-secondary hover:bg-red-700 text-secondary-foreground px-6 py-2 rounded font-semibold transition inline-flex items-center gap-2 justify-center">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-primary-foreground py-16 lg:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+                Meet Our <span class="excellence-text">Team</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-primary-foreground/90 max-w-3xl mx-auto">
+                Experienced professionals with specialized training and practical experience in automobile technologies
+            </p>
+        </div>
+    </section>
+
+    <!-- Company Introduction -->
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6 text-center">
+                    <span class="text-primary">Introduction</span>
+                </h2>
+                <div class="bg-muted rounded-xl p-8 shadow-lg">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        <strong>JETFIX AUTOCARE</strong> is a vibrant auto care company which is aimed at providing top
+                        quality auto care services.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        In order to meet the broad needs of technological development, it has become necessary that
+                        groups of professionals with diverse background work together as an integrated team. At JETFIX
+                        AUTOCARE, we recognize this growing requirement for an inter-disciplinary approach to
+                        technological problems and thus employ a large number of professionals with specialized training
+                        and relevant practical experience in automobile technologies. We utilize inputs from this vast
+                        reservoir of talents as and when required.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="py-16 lg:py-24 bg-gradient-to-b from-white to-muted">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+                    Our <span class="excellence-text">Leadership</span>
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    Meet the visionary leaders guiding JETFIX AUTOCARE to excellence
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+
+                <!-- CEO 2: Commodore Abayomi Taiwo (RTD) -->
+                <div class="team-card bg-card rounded-xl shadow-2xl overflow-hidden fade-in-up delay-200">
+                    <div class="team-image-wrapper h-80">
+                        <div style="background-image: url('images/ceo-male.jpg');"></div>
+                    </div>
+                    <div class="p-8 relative z-10">
+                        <div class="mb-3">
+                            <span
+                                class="inline-block bg-gradient-to-r from-blue-600 to-primary text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                                <i class="fas fa-star mr-1"></i>
+                                Chief Executive Officer
+                            </span>
+                        </div>
+                        <h3 class="font-heading font-bold text-3xl mb-3 text-card-foreground">Commodore Abayomi Taiwo
+                            (RTD)</h3>
+                        <p class="text-muted-foreground leading-relaxed text-lg">
+                            A distinguished senior strategist with a background in IT, Finance & Geodetics from
+                            Vocational College. His extensive experience and strategic mindset guide JETFIX AUTOCARE's
+                            operational excellence and customer service quality.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CEO 1: Mrs. Taiwo Taiwo -->
+                <div class="team-card bg-card rounded-xl shadow-2xl overflow-hidden fade-in-up delay-100">
+                    <div class="team-image-wrapper h-80">
+                        <div style="background-image: url('images/ceo-female.jpg'); background-position: center 27%;">
+                        </div>
+                    </div>
+                    <div class="p-8 relative z-10">
+                        <div class="mb-3">
+                            <span
+                                class="inline-block bg-gradient-to-r from-amber-500 to-yellow-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                                <i class="fas fa-crown mr-1"></i>
+                                Managing Director & Co-founder
+                            </span>
+                        </div>
+                        <h3 class="font-heading font-bold text-3xl mb-3 text-card-foreground">Mrs. Taiwo Taiwo</h3>
+                        <p class="text-muted-foreground leading-relaxed text-lg">
+                            Co-founder of JETFIX AUTOCARE with expertise in business administration. Mrs. Taiwo brings
+                            strategic vision and leadership to the company, driving innovation and excellence in
+                            automotive care services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members -->
+    <section class="py-16 lg:py-24 bg-muted">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+                    Our <span class="text-primary">Team Members</span>
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    Meet the dedicated professionals who make JETFIX AUTOCARE the trusted choice for automotive care
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Team Member 1: Manager -->
+                <div class="team-card bg-card rounded-xl shadow-lg overflow-hidden fade-in-up delay-100">
+                    <div class="team-image-wrapper h-64">
+                        <div
+                            style="background-image: url('images/gbenga-photo.jpg'); background-position: center 20%; background-size: 90%;">
+                        </div>
+                    </div>
+                    <div class="p-6 relative z-10">
+                        <div class="mb-2">
+                            <span
+                                class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">Manager</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl mb-2 text-card-foreground">Owolani Gbenga</h3>
+                        <p class="text-muted-foreground leading-relaxed">
+                            Owolani Gbenga is a graduate of Banking and Finance from Adekunle Ajasin University,
+                            Akungba Akoko, Ondo state and has served previously as a Financial Transaction officer at
+                            Philips Outsourcing Nigeria Limited. He has the drive to coordinate team members with the
+                            resultant effect of achieving the company's goals.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Team Member 2: Senior Technician -->
+                <div class="team-card bg-card rounded-xl shadow-lg overflow-hidden fade-in-up delay-200">
+                    <div class="team-image-wrapper h-64">
+                        <div
+                            style="background-image: url('images/mahmoud-photo.jpg'); background-position: center 20%; background-size: 90%;">
+                        </div>
+                    </div>
+                    <div class="p-6 relative z-10">
+                        <div class="mb-2">
+                            <span
+                                class="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-semibold">Senior
+                                Technician</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl mb-2 text-card-foreground">Mahmoud Olaosaye Lukman
+                        </h3>
+                        <p class="text-muted-foreground leading-relaxed">
+                            Mahmoud Olaosaye Lukman is a well-seasoned senior technician with over five years experience
+                            working across some units in the company. He is a highly committed and dependable staff
+                            member who has been a long serving member of the company.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Team Member 3: Driving Instructor -->
+                <div class="team-card bg-card rounded-xl shadow-lg overflow-hidden fade-in-up delay-300">
+                    <div class="team-image-wrapper h-64">
+                        <div
+                            style="background-image: url('images/jemimah-taiwo-photo.jpg');background-position: center 25%;background-size: 90%;">
+                        </div>
+                    </div>
+                    <div class="p-6 relative z-10">
+                        <div class="mb-2">
+                            <span
+                                class="inline-block bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">Driving
+                                Instructor</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl mb-2 text-card-foreground">Jemimah Taiwo</h3>
+                        <p class="text-muted-foreground leading-relaxed mb-3">
+                            A graduate of Computer Science from University of Ilorin, Kwara State. She's a professional
+                            driver who knows all road laws. She's a pro at automatic cars and manual.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="inline-block bg-muted px-3 py-1 rounded-full text-sm">Automatic</span>
+                            <span class="inline-block bg-muted px-3 py-1 rounded-full text-sm">Manual</span>
+                            <span class="inline-block bg-muted px-3 py-1 rounded-full text-sm">Road Laws Expert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us, Vision, Mission -->
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <!-- About Us -->
+                <div class="mb-12 fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
+                        <span class="text-primary">About Us</span>
+                    </h2>
+                    <div
+                        class="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-8 border-l-4 border-primary">
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Here at Jetfix Autocare we value our Customers and their opinions. We understand that
+                            customers have a vast list of options as to where to go for Automobile wash and Auto
+                            repairs. Jetfix Autocare is committed to helping car owners in and outside of Kwara state
+                            maintain their vehicles and to do so with honesty and integrity. With our state-of-the-art
+                            equipment, we take care of all automobile repairs, maintenance and tyre needs. From oil
+                            changes, filter replacements, and fluid flushes to brake repairs, shocks absorber, tyres,
+                            wheel balancing and alignment, name it we've got you covered.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Vision & Mission Grid -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Vision -->
+                    <div class="fade-in-up delay-100">
+                        <div class="bg-card rounded-xl shadow-lg p-8 h-full border-t-4 border-primary">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-eye text-primary text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-heading font-bold text-gray-900">Our Vision</h3>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                To be abreast on all automobile technologies which will aid us to offer reliable
+                                automotive services and repairs. We also strive to develop an unmatched reputation with
+                                our customers within the community in terms of quality of service and delivery.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Mission -->
+                    <div class="fade-in-up delay-200">
+                        <div class="bg-card rounded-xl shadow-lg p-8 h-full border-t-4 border-secondary">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-bullseye text-secondary text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-heading font-bold text-gray-900">Our Mission</h3>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                To provide the best of automobile care, quality workmanship and only the most
+                                exceptional of services. We are dedicated to staying committed to Our customers. Jetfix
+                                Autocare offers a clean and comfortable environment for our customers, where we strive
+                                to surpass our customers' expectations in every way, and to guarantee all repairs a job
+                                well done.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 lg:py-24 bg-muted">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 fade-in-up">
+                Ready to Experience Excellence?
+            </h2>
+            <p class="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto fade-in-up delay-100">
+                Let our experienced team take care of your vehicle with the professionalism and dedication you deserve
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up delay-200">
+                <a href="tel:+2348148595815"
+                    class="bg-secondary hover:bg-red-700 text-secondary-foreground font-semibold text-lg px-8 py-3 rounded inline-flex items-center justify-center gap-2 transition">
+                    <i class="fas fa-phone"></i>
+                    Call Us Now
+                </a>
+                <a href="contact.html"
+                    class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold text-lg px-8 py-3 rounded inline-flex items-center justify-center gap-2 transition">
+                    Contact Us
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <h4 class="font-heading font-bold text-xl mb-4">JETFIX AUTOCARE</h4>
+                    <p class="text-gray-400 mb-4">
+                        Your trusted automobile service partner in Ilorin, Kwara State, Nigeria.
+                    </p>
+                    <p class="text-gray-400 italic">A Passion for Excellence</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-xl mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-primary transition">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-primary transition">Services</a>
+                        </li>
+                        <li><a href="team.html" class="text-gray-400 hover:text-primary transition">Our Team</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-primary transition">Gallery</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-primary transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-heading font-bold text-xl mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Vehicle Diagnostics</li>
+                        <li class="text-gray-400">Car Repair Services</li>
+                        <li class="text-gray-400">Wheel Alignment</li>
+                        <li class="text-gray-400">Wheel Balancing</li>
+                        <li class="text-gray-400">Driving School</li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-heading font-bold text-xl mb-4">Contact Info</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2 text-gray-400">
+                            <i class="fas fa-map-marker-alt text-primary"></i>
+                            Ilorin, Kwara State, Nigeria
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone text-primary"></i>
+                            <a href="tel:+2348148595815" class="text-gray-400 hover:text-primary transition">+234
+                                8148595815</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <a href="mailto:jetfixautocare@gmail.com"
+                                class="text-gray-400 hover:text-primary transition">jetfixautocare@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-400">
+                            <i class="fas fa-clock text-primary"></i>
+                            Mon - Sat: 8AM - 6PM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 JETFIX AUTOCARE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <div class="whatsapp-tooltip">Chat with us on WhatsApp</div>
+        <a href="https://wa.me/2348148595815?text=Hello%20JETFIX%20AUTOCARE!%20I%20would%20like%20to%20inquire%20about%20your%20services."
+            target="_blank" rel="noopener noreferrer" class="whatsapp-button" aria-label="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
