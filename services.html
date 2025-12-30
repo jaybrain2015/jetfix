@@ -310,6 +310,11 @@
             margin-bottom: 5px;
         }
 
+        /* Force mobile menu to display when active - must override hidden class */
+        #mobileMenu.active {
+            display: block !important;
+        }
+
         /* Enhanced Mobile Navigation Styles */
         @media (max-width: 1024px) {
             .mobile-menu-backdrop {
