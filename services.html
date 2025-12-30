@@ -931,8 +931,12 @@
             const menu = document.getElementById('mobileMenu');
             const backdrop = document.getElementById('mobileBackdrop');
 
+            console.log('Mobile menu elements:', { btn, menu, backdrop });
+
             if (btn && menu) {
+                console.log('Mobile menu initialized successfully');
                 btn.onclick = function () {
+                    console.log('Button clicked!');
                     const isActive = menu.classList.contains('active');
                     if (isActive) {
                         menu.classList.remove('active');
@@ -953,6 +957,8 @@
                         backdrop.classList.remove('active');
                     };
                 }
+            } else {
+                console.error('Mobile menu elements not found!');
             }
         });
     </script>
