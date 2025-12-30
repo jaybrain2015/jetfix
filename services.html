@@ -296,25 +296,6 @@
             }
         }
 
-        /* Hamburger Icon Base Styles */
-        .hamburger-line {
-            display: block;
-            width: 28px;
-            height: 3px;
-            background: currentColor;
-            border-radius: 3px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .hamburger-line:not(:last-child) {
-            margin-bottom: 5px;
-        }
-
-        /* Force mobile menu to display when active - must override hidden class */
-        #mobileMenu.active {
-            display: block !important;
-        }
-
         /* Enhanced Mobile Navigation Styles */
         @media (max-width: 1024px) {
             .mobile-menu-backdrop {
@@ -345,10 +326,22 @@
             }
 
             #mobileMenu.active {
-                display: block !important;
                 transform: translateY(0);
                 opacity: 1;
                 visibility: visible;
+            }
+
+            .hamburger-line {
+                display: block;
+                width: 28px;
+                height: 3px;
+                background: currentColor;
+                border-radius: 3px;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .hamburger-line:not(:last-child) {
+                margin-bottom: 5px;
             }
 
             #mobileMenuBtn.active .hamburger-line:nth-child(1) {
