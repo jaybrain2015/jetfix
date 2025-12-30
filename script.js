@@ -7,7 +7,7 @@ const navMenu = document.getElementById('navMenu');
 if (mobileToggle) {
   mobileToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-    
+
     // Animate hamburger icon
     const spans = mobileToggle.querySelectorAll('span');
     if (navMenu.classList.contains('active')) {
@@ -42,13 +42,13 @@ let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
-  
+
   if (currentScroll > 100) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
   }
-  
+
   lastScroll = currentScroll;
 });
 
@@ -60,7 +60,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       e.preventDefault();
       const target = document.querySelector(href);
       const offsetTop = target.offsetTop - 80;
-      
+
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
@@ -68,6 +68,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// Smooth Scroll to Top for Home link and Logo (on index.html only)
+if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
+  document.querySelectorAll('a[href="index.html"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+}
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
@@ -87,7 +100,7 @@ const observer = new IntersectionObserver((entries) => {
 // Add fade-in effect to cards
 document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.card, .service-card, .team-card, .gallery-item');
-  
+
   cards.forEach((card, index) => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(30px)';
@@ -102,17 +115,17 @@ const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     // Get form data
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData.entries());
-    
+
     // Show success message
     showNotification('Thank you! Your message has been sent. We\'ll get back to you soon.', 'success');
-    
+
     // Reset form
     contactForm.reset();
-    
+
     // In a real application, you would send this data to a server
     console.log('Form submission:', data);
   });
@@ -125,7 +138,7 @@ function showNotification(message, type = 'info') {
   if (existingNotification) {
     existingNotification.remove();
   }
-  
+
   // Create notification element
   const notification = document.createElement('div');
   notification.className = `notification notification-${type}`;
@@ -135,7 +148,7 @@ function showNotification(message, type = 'info') {
       <p>${message}</p>
     </div>
   `;
-  
+
   // Add styles
   notification.style.cssText = `
     position: fixed;
@@ -150,23 +163,23 @@ function showNotification(message, type = 'info') {
     animation: slideInRight 0.3s ease;
     max-width: 400px;
   `;
-  
+
   const content = notification.querySelector('.notification-content');
   content.style.cssText = `
     display: flex;
     align-items: center;
     gap: 0.75rem;
   `;
-  
+
   const icon = notification.querySelector('.notification-icon');
   icon.style.cssText = `
     font-size: 1.5rem;
     font-weight: bold;
   `;
-  
+
   // Add to page
   document.body.appendChild(notification);
-  
+
   // Remove after 5 seconds
   setTimeout(() => {
     notification.style.animation = 'slideOutRight 0.3s ease';
