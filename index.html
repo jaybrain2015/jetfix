@@ -549,6 +549,101 @@
                 display: none;
             }
         }
+
+        /* Enhanced Mobile Navigation Styles */
+        @media (max-width: 1024px) {
+            .mobile-menu-backdrop {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(4px);
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+                z-index: 998;
+            }
+
+            .mobile-menu-backdrop.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            #mobileMenu {
+                transform: translateX(-100%);
+                opacity: 0;
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                    opacity 0.4s ease;
+            }
+
+            #mobileMenu.active {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            .hamburger-line {
+                display: block;
+                width: 28px;
+                height: 3px;
+                background: currentColor;
+                border-radius: 3px;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .hamburger-line:not(:last-child) {
+                margin-bottom: 5px;
+            }
+
+            #mobileMenuBtn.active .hamburger-line:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            #mobileMenuBtn.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            #mobileMenuBtn.active .hamburger-line:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            #mobileMenu ul li {
+                opacity: 0;
+                transform: translateX(-20px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+
+            #mobileMenu.active ul li {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            #mobileMenu.active ul li:nth-child(1) {
+                transition-delay: 0.1s;
+            }
+
+            #mobileMenu.active ul li:nth-child(2) {
+                transition-delay: 0.15s;
+            }
+
+            #mobileMenu.active ul li:nth-child(3) {
+                transition-delay: 0.2s;
+            }
+
+            #mobileMenu.active ul li:nth-child(4) {
+                transition-delay: 0.25s;
+            }
+
+            #mobileMenu.active ul li:nth-child(5) {
+                transition-delay: 0.3s;
+            }
+
+            #mobileMenu.active ul li:nth-child(6) {
+                transition-delay: 0.35s;
+            }
+        }
     </style>
 
 </head>
@@ -618,11 +713,16 @@
                     </li>
                 </ul>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="lg:hidden text-gray-900">
-                    <i class="fas fa-bars text-2xl"></i>
+                <!-- Mobile Menu Button with Enhanced Hamburger -->
+                <button id="mobileMenuBtn" class="lg:hidden text-gray-900" aria-label="Toggle mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
                 </button>
             </div>
+
+            <!-- Mobile Menu Backdrop -->
+            <div class="mobile-menu-backdrop" id="mobileBackdrop"></div>
 
             <!-- Mobile Menu -->
             <div id="mobileMenu" class="hidden lg:hidden pb-4">
