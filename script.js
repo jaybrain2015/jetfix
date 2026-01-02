@@ -41,6 +41,8 @@ const navbar = document.getElementById('navbar');
 let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
+  if (!navbar) return;
+
   const currentScroll = window.pageYOffset;
 
   if (currentScroll > 100) {
@@ -151,7 +153,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Add fade-in effect to cards
 document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.card, .service-card, .team-card, .gallery-item');
+  const cards = document.querySelectorAll('.card, .service-card, .team-card, .gallery-item, .fade-in-up, .fade-in');
 
   cards.forEach((card, index) => {
     card.style.opacity = '0';

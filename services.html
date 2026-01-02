@@ -924,44 +924,7 @@
 
 
     <!-- Mobile Menu JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const btn = document.getElementById('mobileMenuBtn');
-            const menu = document.getElementById('mobileMenu');
-            const backdrop = document.getElementById('mobileBackdrop');
-
-            console.log('Mobile menu elements:', { btn, menu, backdrop });
-
-            if (btn && menu) {
-                console.log('Mobile menu initialized successfully');
-                btn.onclick = function () {
-                    console.log('Button clicked!');
-                    const isActive = menu.classList.contains('active');
-                    if (isActive) {
-                        menu.classList.remove('active');
-                        btn.classList.remove('active');
-                        if (backdrop) backdrop.classList.remove('active');
-                    } else {
-                        menu.classList.remove('hidden');
-                        menu.classList.add('active');
-                        btn.classList.add('active');
-                        if (backdrop) backdrop.classList.add('active');
-                    }
-                };
-
-                if (backdrop) {
-                    backdrop.onclick = function () {
-                        menu.classList.remove('active');
-                        btn.classList.remove('active');
-                        backdrop.classList.remove('active');
-                    };
-                }
-            } else {
-                console.error('Mobile menu elements not found!');
-            }
-        });
-    </script>
-
+   
     <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
